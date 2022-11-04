@@ -1,37 +1,39 @@
 {
-  "name": "backend",
-  "version": "0.0.1",
-  "description": "API REST con TypeScript para Backend",
-  "main": "src/index.ts",
-  "scripts": {
-    "build": "tsc",
-    "dev": "ts-node-dev --respawn src/index.ts",
-    "start": "node dist/index.js"
-  },
-  "keywords": [
-    "api",
-    "rest",
-    "typescript",
-    "backend"
-  ],
-  "author": "Jorge de Jesus Perez Lopez",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.13",
-    "@types/mongoose": "^5.11.97",
-    "@types/morgan": "^1.9.3",
-    "@types/node": "^18.7.14",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^4.8.2"
-  },
-  "dependencies": {
-    "@hapi/boom": "^10.0.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "mongoose": "^6.5.4",
-    "morgan": "^1.10.0",
-    "socket.io": "^4.5.2"
-  }
+	"name": "backend",
+	"version": "0.0.1",
+	"description": "API REST con TypeScript para Backend",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "tsc",
+		"dev": "ts-node-dev --respawn src/index.ts",
+		"start": "node dist/index.js"
+	},
+	"keywords": [
+		"api",
+		"rest",
+		"typescript",
+		"backend"
+	],
+	"author": "Jorge de Jesus Perez Lopez",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/cors": "^2.8.12",
+		"@types/express": "^4.17.13",
+		"@types/mongoose": "^5.11.97",
+		"@types/morgan": "^1.9.3",
+		"@types/node": "^18.7.14",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^4.8.2"
+	},
+	"dependencies": {
+		"@hapi/boom": "^10.0.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.2",
+		"express": "^4.18.1",
+		"mongoose": "^6.5.4",
+		"morgan": "^1.10.0",
+		"socket.io": "^4.5.2",
+		"swagger-jsdoc": "^6.2.5",
+		"swagger-ui-express": "^4.5.0"
+	}
 }

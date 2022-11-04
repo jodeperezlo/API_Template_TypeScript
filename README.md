@@ -9,7 +9,8 @@
     │       ├───routes
     │       └───services
     ├───config
-    └───socket
+    ├───socket
+    └───swagger
 ```
 
 # Iniciar el proyecto. 🚀

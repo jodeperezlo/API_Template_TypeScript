@@ -1,0 +1,205 @@
+paths:
+  /people:
+    get:
+      summary: Get all people
+      tags: [CT_People]
+      description: Returns all people in the database with a JSON
+      responses:
+        200:
+          description: Successful operation, returns a JSON with a people list
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CT_People"
+        403:
+          description: Forbidden
+        404:
+          description: There are no people
+        500:
+          description: Internal server error
+
+components:
+  schemas:
+    CT_People:
+      type: object
+      properties:
+        IdPersonBK:
+          type: string
+          example: "3335350"
+          description: The ID in the system for the company
+        Name:
+          type: string
+          example: "Jorge de Jesus"
+          description: The person name(s)
+        LastName:
+          type: string
+          example: "Perez Lopez"
+          description: The person last name(s)
+        BirthDay:
+          type: string
+          format: date-time
+          example: "2022-12-31T17:32:28Z"
+          description: The person birthday
+        RFC:
+          type: string
+          example: "PELJ980730ABC"
+          description: The person RFC
+        CURP:
+          type: string
+          example: "PELJ980730HNTRPR01"
+          description: The person CURP
+        Gender:
+          type: string
+          example: "M"
+          description: The person gender M (masculine) F (female)
+        Alias:
+          type: string
+          example: "Koqkee"
+          description: The person alias
+        Type:
+          type: string
+          format: uuid
+          example: "63155120d99ceb07e879f53a"
+          description: The person type references to other document of types
+        Addresses:
+          $ref: "#/components/Addresses"
+        Phones:
+          $ref: "#/components/Phones"
+        WebAddresses:
+          $ref: "#/components/WebAddresses"
+        DetailRow:
+          $ref: "#/components/DetailRow"
+
+  Addresses:
+    type: array
+    items:
+      type: object
+      properties:
+        Street:
+          type: string
+          example: "Av. Vallarta"
+          description: The street name for this address
+        OutdoorNumber:
+          type: string
+          example: "249"
+          description: The address number
+        IndoorNumber:
+          type: string
+          example: "A"
+          description: The indoor address number
+        Neighborhood:
+          type: string
+          example: "Centro"
+          description: The address neighborhood
+        BetweenStreet1:
+          type: string
+          example: "Av. Ejercito"
+          description: The street between address 1
+        BetweenStreet2:
+          type: string
+          example: "Av. Guadalajara"
+          description: The street between address 2
+        City:
+          type: string
+          example: "Guadalajara"
+          description: The address city
+        Municipality:
+          type: string
+          example: "Guadalajara"
+          description: The address municipality
+        State:
+          type: string
+          example: "Jalisco"
+          description: The address state
+        Country:
+          type: string
+          example: "México"
+          description: The address country
+        ZipCode:
+          type: string
+          example: "63000"
+          description: The address zip code
+        IsMain:
+          type: boolean
+          example: true
+          description: The address is main address
+        Type:
+          type: string
+          example: "6315761ed99ceb07e879f545"
+          description: The id address type references to other document of types
+        DetailRow:
+          $ref: "#/components/DetailRow"
+
+  Phones:
+    type: array
+    items:
+      type: object
+      properties:
+        Code:
+          type: string
+          example: "+52"
+          description: The country code for this phone
+        Number:
+          type: string
+          example: "3111234567"
+          description: The phone number
+        IsMain:
+          type: boolean
+          example: true
+          description: The phone is main phone
+        Type:
+          type: string
+          example: "63157710d99ceb07e879f54a"
+          description: The id phone type references to other document of types
+        DetailRow:
+          $ref: "#/components/DetailRow"
+
+  WebAddresses:
+    type: array
+    items:
+      type: object
+      properties:
+        Address:
+          type: string
+          example: "jodeperezlo@ittepic.edu.mx"
+          description: The web address
+        Description:
+          type: string
+          example: "Correo institucional"
+          description: The web address description
+        IsMain:
+          type: boolean
+          example: true
+          description: The phone is main phone
+        Type:
+          type: string
+          example: "6315775ad99ceb07e879f54d"
+          description: The id phone type references to other document of types
+        DetailRow:
+          $ref: "#/components/DetailRow"
+
+  DetailRow:
+    type: object
+    properties:
+      RegisterDate:
+        type: string
+        format: date-time
+        example: "2022-12-31T07:00:00.000+00:00"
+        description: The date and time when the record was created
+      RegisterUser:
+        type: string
+        example: "3335350"
+        description: the user who registered the status
+      LastUpdated:
+        type: string
+        format: date-time
+        example: "2022-12-31T07:00:00.000+00:00"
+        description: The date and time when the record was last updated
+      LastUpdatedUser:
+        type: string
+        example: "3335350"
+        description: The user who last updated the status
+      Active:
+        type: boolean
+        example: true
+        description: The status of the record
